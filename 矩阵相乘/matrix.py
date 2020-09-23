@@ -1,8 +1,9 @@
 # encoding: utf-8
+
 from random import  *
 from  time  import  *
 
-bef = int(time()*1000)
+bef = 0
 
 def gmatrix(m, n):
   r = []
@@ -13,12 +14,16 @@ def gmatrix(m, n):
     r.append(row)
   return r
 
+left = gmatrix(100, 500)
+right = gmatrix(500, 100)
+
 def multiply():
-  left = gmatrix(100, 5000)
-  right = gmatrix(5000, 100)
+  global left
+  global right
   m = len(left)
   n = len(right)
   l = len(right[0])
+
   r = []
   for i in range(m):
     row = []
@@ -30,5 +35,14 @@ def multiply():
     r.append(row)
   return r
 
-r = multiply()
-print(u'花费时间 ' + str(int(time()*1000) - bef))
+def loop1000():
+  i = 0
+  global bef
+  bef = int(time()*1000)
+  while i < 1000:
+    r = multiply()
+    i += 1
+
+loop1000()
+
+print(str(int(time()*1000) - bef))
