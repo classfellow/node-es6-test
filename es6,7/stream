@@ -1,1 +1,0 @@
-(function($){$.alerts={verticalOffset:-75,horizontalOffset:0,repositionOnResize:true,overlayOpacity:0.01,overlayColor:"#FFF",draggable:true,okButton:"&nbsp;OK&nbsp;",cancelButton:"&nbsp;Cancel&nbsp;",dialogClass:null,alert:function(message,title,callback){if(title==null){title="Alert"}$.alerts._show(title,message,null,"alert",function
